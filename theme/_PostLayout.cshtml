@@ -6,7 +6,7 @@
 
 <div class="post">
     <div class="post-header">
-        <h2>@Model.WithoutSettings.String(BlogKeys.Title)</h2>
+        <h1>@Model.WithoutSettings.String(BlogKeys.Title)</h1>
         <div class="post-published">Published @Published.ToShortDateString()</div>
         
         @if (Tags.Any()) { <span>Tags: </span> }
@@ -19,7 +19,7 @@
         <a href="@Context.GetLink(Context.String(BlogKeys.PostsPath))">(back to posts)</a>
     </div>
 
-
-    @RenderBody()
-
+    <div class="post-body">
+        @RenderBody()
+    </div>
 </div>

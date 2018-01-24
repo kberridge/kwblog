@@ -7,7 +7,7 @@
 
 <div class="post-list pure-g">
     <div class="pure-u-1">
-        <h2>Posts Tagged @tag</h2>
+        <h1>Posts Tagged @tag</h1>
     </div>
     @foreach(var post in postPages)
     {
@@ -15,13 +15,13 @@
             <div class="post">
                 <div class="post-header">
                     <a href="@Context.GetLink(post)">
-                        <h2>@post.WithoutSettings.String(BlogKeys.Title)</h2>
+                        <h1>@post.WithoutSettings.String(BlogKeys.Title)</h1>
                     </a>
                     <div class="post-published">@post.String(BlogKeys.Published)</div>
                 </div>
                 <div class="post-excerpt">
                     @Html.Raw(post.String(BlogKeys.Excerpt))
-                    <a href="@Context.GetLink(post)">...</a>
+                    <a class="post-excerpt-ellipsis" href="@Context.GetLink(post)">...</a>
                 </div>
             </div>
         </div>    
