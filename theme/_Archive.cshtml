@@ -1,0 +1,27 @@
+<div class="post-list pure-g">
+    @foreach(var post in Model.DocumentList(Keys.PageDocuments))
+    {
+        <div class="pure-u-1 pure-u-md-1-2">
+            <div class="post">
+                <div class="post-header">
+                    <a href="@Context.GetLink(post)">
+                        <h2>@post.WithoutSettings.String(BlogKeys.Title)</h2>
+                    </a>
+                    <div class="post-published">@post.String(BlogKeys.Published)</div>
+                </div>
+                <div class="post-excerpt">
+                    @Html.Raw(post.String(BlogKeys.Excerpt))
+                    <a href="@Context.GetLink(post)">...</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@if(Model.Bool(Keys.HasPreviousPage)) {
+    <a href="@(Context.GetLink(Model.Document(Keys.PreviousPage)))"><span aria-hidden="true">&larr;</span> Newer</a> 
+} 
+
+@if(Model.Bool(Keys.HasNextPage)) {
+    <a href="@(Context.GetLink(Model.Document(Keys.NextPage)))">Older <span aria-hidden="true">&rarr;</span></a> 
+}

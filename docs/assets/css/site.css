@@ -1,0 +1,56 @@
+/*
+    When setting the primary font stack, apply it to the Pure grid units along
+    with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
+    specific font stacks to ensure the greatest OS/browser compatibility.
+    */
+html, button, input, select, textarea,
+  .pure-g [class *= "pure-u"] {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.header {
+  background-color: #eee;
+}
+
+.post-list {
+  padding: 0 2em 0 2em;
+}
+.post-list .post {
+  padding: 0 2em 0 2em;
+}
+.post {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 .5em 0 .5em;
+}
+.post-header {
+  border-left: solid 3px #f00;
+  padding-left: 1em;
+}
+.post a {
+  text-decoration: none;
+  color: #333;
+}
+.post a:hover {
+  color: #000;
+}
+.post a:visited {
+  color: #aaa;
+}
+.post h2 {
+  margin-bottom: 0;
+}
+.post-published {
+  color: #aaa;
+}
+.post-excerpt p {
+  margin-bottom: 0;
+}
+
+.tag-list {
+  padding: 0 2em 0 2em;
+  max-width: 720px;
+  margin: 0 auto;
+}

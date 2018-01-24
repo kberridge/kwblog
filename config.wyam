@@ -1,0 +1,6 @@
+#r Blog
+
+Settings["Title"] = "KWBlog";
+Settings["Description"] = "KWBlog";
+Settings["Intro"] = "Experiments in software engineering";
+Settings[BlogKeys.IndexPageSize] = 10;
