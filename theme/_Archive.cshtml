@@ -4,9 +4,7 @@
         <div class="pure-u-1 pure-u-md-1-2">
             <div class="post">
                 <div class="post-header">
-                    <a href="@Context.GetLink(post)">
-                        <h1>@post.WithoutSettings.String(BlogKeys.Title)</h1>
-                    </a>
+                    <h1><a href="@Context.GetLink(post)">@post.WithoutSettings.String(BlogKeys.Title)</a></h1>
                     <div class="post-published">@post.String(BlogKeys.Published)</div>
                 </div>
                 <div class="post-excerpt">
