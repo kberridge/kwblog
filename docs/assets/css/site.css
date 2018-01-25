@@ -17,6 +17,18 @@ h2 {
   font-size: 1.25em;
 }
 
+code {
+  padding: 2px 4px;
+  background-color: #eaeaea;
+}
+pre {
+  padding: .75em;
+  background-color: #eaeaea;
+}
+pre code {
+  padding: 0;
+}
+
 .header {
   background-color: #eee;
 }
