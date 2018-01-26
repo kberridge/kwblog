@@ -4,11 +4,11 @@ param(
 )
 
 function Build {
-  wyam build -o .\docs
+  wyam build
 }
 
 function Server {
-  wyam -p -w -o .\docs
+  wyam -p -w
 }
 
 if(!$Command) { Build }
