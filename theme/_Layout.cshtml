@@ -11,6 +11,13 @@
         <!--<![endif]-->
         <link href="@Context.GetLink("/assets/css/site.css")" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+        @if (Context.String(BlogKeys.RssPath) != null) {
+            <link type="application/rss+xml" rel="alternate" title="@(Context.String(BlogKeys.Title)) (rss)" href="@Context.GetLink(Context.String(BlogKeys.RssPath))" />
+        }
+        @if (Context.String(BlogKeys.AtomPath) != null) {
+            <link type="application/atom+xml" rel="alternate" title="@(Context.String(BlogKeys.Title)) (atom)" href="@Context.GetLink(Context.String(BlogKeys.AtomPath))" />
+        }
     </head>
     <body>
         <div class="header">
