@@ -51,6 +51,10 @@ blockquote {
   margin: 0 auto;
   padding: 0 .5em 0 .5em;
 }
+.post p {
+  word-spacing: 3px;
+  font-size: 1.1em;
+}
 .post-header {
   border-left: solid 3px #f00;
   padding-left: 1em;
