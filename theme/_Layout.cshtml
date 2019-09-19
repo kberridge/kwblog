@@ -29,6 +29,16 @@
         @if (Context.String(BlogKeys.AtomPath) != null) {
             <link type="application/atom+xml" rel="alternate" title="@(Context.String(BlogKeys.Title)) (atom)" href="@Context.GetLink(Context.String(BlogKeys.AtomPath))" />
         }
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2902611-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-2902611-2');
+        </script>
     </head>
     <body>
         <header class="header">
