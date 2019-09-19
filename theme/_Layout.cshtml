@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>@Model.WithoutSettings.String(BlogKeys.Title)</title>
+        @{
+          var title = @Model.WithoutSettings.String(BlogKeys.Title);
+          if (string.IsNullOrEmpty(title)) {
+              title = "KWBlog"; // I should be able to get this from the wyam.config global settings, but I can't figure out how!
+          }
+          else {
+              title = "KWBlog: " + title;
+          }
+        }
+        <title>@(title)</title>
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
         <!--[if lte IE 8]>
             <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
@@ -22,7 +31,7 @@
         }
     </head>
     <body>
-        <div class="header">
+        <header class="header">
             @{
                 List<Tuple<string, string>> pages = Context
                     .Documents[Blog.Pages]
@@ -42,7 +51,7 @@
                 }
             }
             <div class="pure-menu pure-menu-horizontal">
-                <a class="pure-menu-heading" href="@Context.GetLink("/")">@Context.String(BlogKeys.Description)</a>
+                <h1><a class="pure-menu-heading" href="@Context.GetLink("/")">@Context.String(BlogKeys.Description)</a></h1>
                 <ul class="pure-menu-list">
                     @foreach(Tuple<string, string> page in pages)
                     {
@@ -50,7 +59,7 @@
                     }
                 </ul>
             </div>
-        </div>
+        </header>
 
         @RenderBody()
 

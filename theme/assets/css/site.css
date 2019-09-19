@@ -39,6 +39,13 @@ blockquote {
 .pure-menu-link:hover, .pure-menu-heading:hover {
   color: orange;
 }
+.header h1 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 700;
+}
 
 .post-list {
   padding: 0 2em 0 2em;
@@ -52,6 +59,10 @@ blockquote {
   padding: 0 .5em 0 .5em;
 }
 .post p {
+  word-spacing: 3px;
+  font-size: 1.1em;
+}
+.post li {
   word-spacing: 3px;
   font-size: 1.1em;
 }

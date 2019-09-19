@@ -11,7 +11,7 @@ I started blogging on April 4 2007 on [my old blog hosted on blogger](http://kev
 ## Talks
 - [PowerShell: Bringing DevOps to Windows!](https://speakerdeck.com/kberridge/powershell-bringing-devops-to-windows) - Abstractions 8/19/2016
 - [The Cartography of Testing](https://speakerdeck.com/kberridge/the-cartography-of-testing-codemash-2015) - CodeMash 1/8/2015
-- [OOP: You're Doing It Completely Wrong (v2)](http://www.kevinberridge.com/2014/04/oop-youre-doing-it-completely-wrong.html) - Stir Trek 4/4/2014
+- [OOP: You're Doing It Completely Wrong (v2)](https://kevin-berridge.blogspot.com/2014/04/oop-youre-doing-it-completely-wrong.html) - Stir Trek 4/4/2014
 - [OOP: You're Doing It Completely Wrong](https://speakerdeck.com/kberridge/oop-youre-doing-it-completely-wrong) - CodeMash 1/10/2014
 - [Acceptance Testing: The Dirty Details](https://speakerdeck.com/kberridge/acceptance-testing-the-dirty-details) - CodeMash 1/10/2014
 - Acceptance Testing (with Capybara and RSpec) - Burning River Developers 03/15/2012
