@@ -66,6 +66,13 @@ blockquote {
   word-spacing: 3px;
   font-size: 1.1em;
 }
+.post .table {
+  width: 100%;
+}
+.post .table th {
+  text-align: left;
+}
+
 .post-header {
   border-left: solid 3px #f00;
   padding-left: 1em;
