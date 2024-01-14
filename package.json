@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "feed": "^4.2.2",
+    "firebase-tools": "^13.0.3",
+    "gray-matter": "^4.0.3",
+    "next": "latest",
+    "purecss": "^3.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^5.0.1",
+    "remark": "^15.0.1",
+    "remark-excerpt": "^1.0.0-beta.1",
+    "remark-html": "^16.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.0.4"
+  }
+}
