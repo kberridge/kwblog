@@ -3,10 +3,11 @@ import styles from './layout.module.css';
 import Link from 'next/link';
 import { FaRss } from "react-icons/fa";
 
-export default function Layout({ children }) {
+export default function Layout({ children, pageTitle }) {
   return (
     <>
       <Head>
+        <title>{`KWBlog${pageTitle ? `: ${pageTitle}` : ""}`}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Kevin Berridge's blog" />
