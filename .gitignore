@@ -34,4 +34,4 @@ yarn-error.log*
 
 # generated RSS files
 public/atom.xml
-public/rss.xml
+public/feed.rss

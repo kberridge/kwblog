@@ -22,7 +22,7 @@ export default function Layout({ children, pageTitle }) {
               <Link className={`${styles["header-menu-item"]} pure-menu-link`} href="/about">About Me</Link>
             </li>
             <li className='pure-menu-item'>
-              <Link className={`${styles["header-menu-item"]} pure-menu-link`} href="/rss.xml" title="RSS Feed"><FaRss /></Link>
+              <Link className={`${styles["header-menu-item"]} pure-menu-link`} href="/feed.rss" title="RSS Feed"><FaRss /></Link>
             </li>
           </ul>
         </div>
