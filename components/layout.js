@@ -11,7 +11,7 @@ export default function Layout({ children, pageTitle }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Kevin Berridge's blog" />
-        <link type="application/rss+xml" rel="alternate" title="KWBlog (rss)" href="/rss.xml" />
+        <link type="application/rss+xml" rel="alternate" title="KWBlog (rss)" href="/feed.rss" />
         <link type="application/atom+xml" rel="alternate" title="KWBlog (atom)" href="/atom.xml" />
       </Head>
       <header className={styles.header}>
