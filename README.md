@@ -21,5 +21,5 @@ It is hosted in [Google Firebase](https://firebase.google.com).
 
 - `npx firebase logout; npx firebase login;` might be needed if it's been a long time, even if firebase says it is already logged in.
 - to test with firebase before deploy: `npx firebase serve --only hosting`
-- to build the static site: `npm run build`
-- then to deploy: `npx firebase deploy`
+- to build the static site: `.\build`
+- to deploy: `.\build deploy`

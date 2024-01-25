@@ -17,13 +17,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: setup node
+      - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Authenticate to Google Cloud
+      # After calling google's auth `firebase deploy` will use this auth
+      - name: Authenticate to Google Cloud/Firebase
         uses: google-github-actions/auth@v0.4.0
-        with:
+        with: 
+          # This is the service account secret stored in github secrets (setup by `firebase init hosting:github`)
           credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KWBLOG_1C958 }}'
       - name: Deploy
         shell: pwsh
