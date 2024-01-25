@@ -23,4 +23,5 @@ jobs:
           node-version: '20'
       - name: Deploy
         shell: pwsh
-        run: .\build.ps1 deploy
+        run: |
+          .\build.ps1 deploy
