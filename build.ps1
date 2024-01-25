@@ -1,3 +1,16 @@
+<#
+.Synopsis
+	Invoke-Build build script for KWBlog.
+  This script supports direct invocation and automatically installs the correct version
+  of Invoke-Build if it is missing.
+  Run the script, ex: `.\build deploy`
+#>
+
+param(
+	[Parameter(Position=0)]
+	[string[]]$Tasks
+)
+
 # Bootstrap invoke-build
 if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
 	$ErrorActionPreference = 1
