@@ -14,8 +14,6 @@ jobs:
   deploy:
     name: Deploy to Firebase
     runs-on: ubuntu-latest
-    env:
-      GOOGLE_APPLICATION_CREDENTIALS: google-application-credentials.json
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,10 +21,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Prepare Google Application Credentials
-        shell: bash
-        run: |
-          echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT_KWBLOG_1C958 }}" | base64 --decode > "google-application-credentials.json"  
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v0.4.0
+        with:
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KWBLOG_1C958 }}'
       - name: Deploy
         shell: pwsh
         run: |
