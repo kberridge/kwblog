@@ -26,15 +26,15 @@ if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
 }
 
 task Restore {
-  npm i
+  exec { npm i }
 }
 
 task Build Restore, {
-  npm run build
+  exec { npm run build }
 }
 
 task Deploy Build, {
-  npx firebase deploy
+  exec { npx firebase deploy }
 }
 
 task Dev {
