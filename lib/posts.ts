@@ -5,9 +5,23 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import excerpt from 'remark-excerpt';
 
+export interface PostData {
+  id: string,
+  title: string,
+  published: string,
+}
+
+export interface PostDataWithExcerpt extends PostData {
+  excerpt: string;
+}
+
+export interface PostDataWithContent extends PostData {
+  contentHtml: string;
+}
+
 const postsDirectory = path.join(process.cwd(), 'posts-md');
 
-export async function getSortedPostsData() {
+export async function getSortedPostsData() : Promise<PostDataWithExcerpt[]> {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map(async (fileName) => {
@@ -25,7 +39,8 @@ export async function getSortedPostsData() {
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      title: matterResult.data.title as string,
+      published: matterResult.data.published as string,
       excerpt: result.toString()
     };
   });
@@ -52,7 +67,7 @@ export function getAllPostIds() {
   });
 }
 
-export async function getPostData(id) {
+export async function getPostData(id : string) : Promise<PostDataWithContent> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
@@ -69,6 +84,7 @@ export async function getPostData(id) {
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    title: matterResult.data.title as string,
+    published: matterResult.data.published as string
   };
 }

@@ -1,5 +1,6 @@
+import React from 'react';
 import styles from '../styles/Home.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import { PostDataWithExcerpt, getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Layout from '../components/layout';
 import generateRssFeed from '../lib/generateRSSFeed';
@@ -14,7 +15,13 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allPostsData }) {
+export interface Props {
+  allPostsData: PostDataWithExcerpt[]
+}
+
+export default function Home(props: Props) {
+  const { allPostsData } = props;
+  
   return (
     <Layout>
       <section className={`${styles["post-list"]} pure-g`}>

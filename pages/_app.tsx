@@ -1,11 +1,13 @@
+import React from 'react';
 import 'purecss/build/pure-min.css'
 import 'purecss/build/grids-responsive-min.css'
 import '../styles/global.css'
+import { AppProps } from 'next/app';
 import { Source_Sans_3 } from 'next/font/google'
 
 const sourceSans = Source_Sans_3({ weight: '400', subsets: ['latin'] })
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps } : AppProps) {
   return (
     <>
       <style jsx global>{`

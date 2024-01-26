@@ -1,10 +1,11 @@
 import fs from 'fs';
-import { Feed } from 'feed';
+import { Feed, FeedOptions } from 'feed';
+import { PostDataWithExcerpt } from './posts';
 
-export default async function generateRssFeed(allPosts) {
-  const site_url = process.env.SITE_URL;
+export default async function generateRssFeed(allPosts : PostDataWithExcerpt[]) {
+  const site_url = process.env.SITE_URL!;
 
-  const feedOptions = {
+  const feedOptions : FeedOptions = {
     title: 'KWBlog',
     description: "Kevin Berridge's blog",
     id: site_url,
@@ -13,7 +14,8 @@ export default async function generateRssFeed(allPosts) {
     feedLinks: {
       rss2: `${site_url}/feed.rss`,
       atom: `${site_url}/atom.xml`
-    }
+    },
+    copyright: "Kevin Berridge"
   };
 
   const feed = new Feed(feedOptions);

@@ -6,27 +6,13 @@ import html from 'remark-html';
 
 const pagesDirectory = path.join(process.cwd(), 'pages-md');
 
-export async function getPagesData() {
-  const fileNames = fs.readdirSync(pagesDirectory);
-  const allPagesData = fileNames.map(async (fileName) => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '');
+export interface PageData {
+  id: string,
+  title: string
+}
 
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
-
-    // Combine the data with the id
-    return {
-      id,
-      ...matterResult.data,
-    };
-  });
-
-  return allPagesData;
+export interface PageDataWithContent extends PageData {
+  contentHtml: string
 }
 
 export function getAllPageIds() {
@@ -41,7 +27,7 @@ export function getAllPageIds() {
   });
 }
 
-export async function getPageData(id) {
+export async function getPageData(id : string) : Promise<PageDataWithContent> {
   const fullPath = path.join(pagesDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
@@ -58,6 +44,6 @@ export async function getPageData(id) {
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    title: matterResult.data.title as string,
   };
 }

@@ -1,9 +1,14 @@
+import React from 'react';
 import Head from 'next/head';
 import styles from './layout.module.css';
 import Link from 'next/link';
 import { FaRss } from "react-icons/fa";
 
-export default function Layout({ children, pageTitle }) {
+export interface Props {
+  pageTitle?: string
+}
+export default function Layout(props: React.PropsWithChildren<Props>) {
+  const { pageTitle, children } = props;
   return (
     <>
       <Head>
@@ -22,7 +27,14 @@ export default function Layout({ children, pageTitle }) {
               <Link className={`${styles["header-menu-item"]} pure-menu-link`} href="/about">About Me</Link>
             </li>
             <li className='pure-menu-item'>
-              <Link className={`${styles["header-menu-item"]} pure-menu-link`} href="/feed.rss" title="RSS Feed" prefetch={false}><FaRss /></Link>
+              <Link className={`${styles["header-menu-item"]} pure-menu-link`} 
+                href="/feed.rss" 
+                title="RSS Feed" 
+                prefetch={false}
+                target='_new'
+              >
+                <FaRss />
+              </Link>
             </li>
           </ul>
         </div>
