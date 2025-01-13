@@ -14,7 +14,7 @@ param(
 # Bootstrap invoke-build
 if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
 	$ErrorActionPreference = 1
-	$InvokeBuildVersion = '5.10.5'
+	$InvokeBuildVersion = '5.12.1'
 	try {
 		Import-Module InvokeBuild -RequiredVersion $InvokeBuildVersion
 	}
