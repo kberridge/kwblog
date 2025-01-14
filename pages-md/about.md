@@ -1,13 +1,13 @@
 ---
 title: About Me
 ---
-Hi.  My name is Kevin Berridge.  I work at Matrix Pointe Software, and have done so since 2001!  My main experience has been with C# and SQL Server, but I've also worked with F#, PowerShell, JavaScript, TypeScript, and Ruby.  As Manager of Software Engineering, I've been focused on building quality software products, inside and out.  My main emphasis is on delivering quality code and usable applications using exciting tools and modern practices.  I love learning about what makes us tick and what influences how we do development today.  When I’m not hacking I’m probably playing jazz trombone or out for a run.
+Hi! I'm Kevin Berridge, and I've been building software at Matrix Pointe Software since 2001! As Director of Software Engineering, I focus on creating high-quality, user-friendly applications using exciting tools and modern practices. My core experience is in C#, SQL Server, TypeScript, React, and PowerShell, but I've also dabbled in F# and Ruby. I'm always eager to explore new tools and practices that improve how we develop software. Outside work I enjoy a good hobby including: playing trombone or piano, hitting the trails for a run, exploring new whiskeys, traveling, and reading.
 
-I started blogging on April 4 2007 on [my old blog hosted on blogger](http://kevin-berridge.blogspot.com).  I built this new blog in January 2018 to see if it would re-energize me to blog more.
+I started blogging on April 4 2007 on [my old blog hosted on blogger](http://kevin-berridge.blogspot.com).  I built this new blog in January 2018.
 
 ## Contact
-- kevin at kevinberridge.com  
-- [@kberridge](http://twitter.com/kberridge)
+- kevin at kevinberridge.com
+- BlueSky: [kevinberridge.com](https://bsky.app/profile/kevinberridge.com)
 
 ## Talks
 - [PowerShell: Bringing DevOps to Windows!](https://speakerdeck.com/kberridge/powershell-bringing-devops-to-windows) - Abstractions 8/19/2016
@@ -22,11 +22,11 @@ I started blogging on April 4 2007 on [my old blog hosted on blogger](http://kev
 - Value Driven Development - Burning River Developers 4/13/2011
 
 ## Code
-- [bitbucket](http://bitbucket.org/kberridge)  
 - [github](https://github.com/kberridge)  
 - [gists](https://gist.github.com/kberridge)  
 
 ## OSS Contributions
+- [InstallPSModules](https://www.powershellgallery.com/packages/InstallPSModules/1.0.0) - powershell module to install powershell modules
 - [SimpleXml](https://bitbucket.org/kberridge/simplexml/) - my project
 - Mercurial (distributed version control): [changeset 7dc2b](http://selenic.com/repo/hg-stable/rev/7dc2bd4c0dc8), [changeset e3809](http://selenic.com/repo/hg-stable/rev/e380964d53f8)
 - Coypu (C# web testing framework): [pull 77](https://github.com/featurist/coypu/pull/77)
