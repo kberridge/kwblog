@@ -31,3 +31,7 @@ pre code {
 blockquote {
   font-style: italic;
 }
+
+.pure-menu-link {
+  color: #2d2d2d;
+}

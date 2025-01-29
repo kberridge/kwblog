@@ -20,24 +20,25 @@ export default function Layout(props: React.PropsWithChildren<Props>) {
         <link type="application/atom+xml" rel="alternate" title="KWBlog (atom)" href="/atom.xml" />
       </Head>
       <header className={styles.header}>
-        <div className="pure-menu pure-menu-horizontal">
-          <h1><Link className={`${styles["header-menu-item"]} pure-menu-heading`} href="/">KWBlog</Link></h1>
-          <ul className="pure-menu-list">
-            <li className="pure-menu-item">
-              <Link className={`${styles["header-menu-item"]} pure-menu-link`} href="/about">About Me</Link>
+        <nav className={`${styles["header-nav"]}`}>
+          <h1><Link className={`${styles["header-menu-item"]}`} href="/">KWBlog</Link></h1>
+          <ol className={`${styles["header-nav-list"]}`}>
+            <li>
+              <Link className={`${styles["header-menu-item"]}`} href="/about">About Me</Link>
             </li>
-            <li className='pure-menu-item'>
-              <Link className={`${styles["header-menu-item"]} pure-menu-link`} 
+            <li>
+              <Link className={`${styles["header-menu-item"]}`} 
+                style={{display: "flex"}}
                 href="/feed.rss" 
                 title="RSS Feed" 
                 prefetch={false}
                 target='_new'
               >
-                <FaRss />
+                <FaRss aria-label='RSS' />
               </Link>
             </li>
-          </ul>
-        </div>
+          </ol>
+        </nav>
       </header>
       <main>{children}</main>
     </>

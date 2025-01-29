@@ -33,7 +33,7 @@
   color: #333;
 }
 .post-header a:visited, .post-excerpt-ellipsis:visited {
-  color: rgb(140, 140, 140);
+  color: rgb(110, 110, 110);
 }
 .post-header a:hover, .post-excerpt-ellipsis:hover {
   color: orange;
@@ -42,7 +42,7 @@
   margin-bottom: 0;
 }
 .post-published {
-  color: rgb(140, 140, 140);
+  color: rgb(110, 110, 110);
 }
 .post-excerpt p {
   margin-bottom: 0;
