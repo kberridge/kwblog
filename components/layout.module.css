@@ -29,4 +29,5 @@
   display: inline-block;
   font-size: 1em;
   font-weight: 700;
+  font-family: var(--sourcesans);
 }
