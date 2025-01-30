@@ -17,6 +17,7 @@ export default function MyApp({ Component, pageProps } : AppProps) {
           font-family: ${petrona.style.fontFamily};
           font-weight: 400;
           font-size: 17px;
+          line-height: 1.3;
         }
       `}</style>
       <Component {...pageProps} />
