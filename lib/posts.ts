@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import excerpt from 'remark-excerpt';
+import remarkExcerpt from 'remark-excerpt';
 
 export interface PostData {
   id: string,
@@ -21,7 +21,7 @@ export interface PostDataWithContent extends PostData {
 
 const postsDirectory = path.join(process.cwd(), 'posts-md');
 
-export async function getSortedPostsData() : Promise<PostDataWithExcerpt[]> {
+export async function getSortedPostsWithExcerpt() : Promise<(PostDataWithExcerpt & PostDataWithContent)[]> {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map(async (fileName) => {
@@ -34,18 +34,32 @@ export async function getSortedPostsData() : Promise<PostDataWithExcerpt[]> {
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
-    const result = await remark().use(excerpt).use(html).process(matterResult.content);
+
+    // Use remark to convert markdown to html excerpt
+    const excerptResult = await remark()
+      .use(remarkExcerpt)
+      .use(html, { sanitize: false })
+      .process(matterResult.content);
+    const excerptHtml = excerptResult.toString();
+
+    // Use remark to convert markdown to html
+    const contentResult = await remark()
+      .use(html, { sanitize: false })
+      .process(matterResult.content);
+    const contentHtml = contentResult.toString();
 
     // Combine the data with the id
     return {
       id,
       title: matterResult.data.title as string,
       published: matterResult.data.published as string,
-      excerpt: result.toString()
+      excerpt: excerptHtml,
+      contentHtml: contentHtml
     };
   });
+
   const reallyAllPostsData = await Promise.all(allPostsData);
-  // Sort posts by date
+  // Sort posts by date DESC
   return reallyAllPostsData.sort((a, b) => {
     if (Date.parse(a.published) < Date.parse(b.published)) {
       return 1;

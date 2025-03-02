@@ -1,8 +1,8 @@
 import fs from 'fs';
 import { Feed, FeedOptions } from 'feed';
-import { PostDataWithExcerpt } from './posts';
+import { PostDataWithContent } from './posts';
 
-export default async function generateRssFeed(allPosts : PostDataWithExcerpt[]) {
+export default async function generateRssFeed(allPosts : PostDataWithContent[]) {
   const site_url = process.env.SITE_URL!;
 
   const feedOptions : FeedOptions = {
@@ -26,7 +26,7 @@ export default async function generateRssFeed(allPosts : PostDataWithExcerpt[]) 
       id: `${site_url}/posts/${post.id}`,
       link: `${site_url}/posts/${post.id}`,
       date: new Date(post.published),
-      content: post.excerpt
+      content: post.contentHtml
     });
   });
 

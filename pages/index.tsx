@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from '../styles/Home.module.css';
-import { PostDataWithExcerpt, getSortedPostsData } from '../lib/posts';
+import { PostDataWithExcerpt, getSortedPostsWithExcerpt } from '../lib/posts';
 import Link from 'next/link';
 import Layout from '../components/layout';
 import generateRssFeed from '../lib/generateRSSFeed';
 
 export async function getStaticProps() {
-  const allPostsData = await getSortedPostsData();
+  const allPostsData = await getSortedPostsWithExcerpt();
   await generateRssFeed(allPostsData);
   return {
     props: {

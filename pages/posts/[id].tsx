@@ -1,9 +1,8 @@
 import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/posts';
-import Head from 'next/head';
+import { getAllPostIds, getPostData, PostDataWithContent } from '../../lib/posts';
 import styles from '../../styles/Home.module.css';
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params } : any) {
   const postData = await getPostData(params.id);
   return {
     props: {
@@ -20,7 +19,13 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Post({ postData }) {
+interface Props {
+  postData: PostDataWithContent
+}
+
+export default function Post(props: Props) {
+  const {postData} = props;
+
   return (
     <Layout pageTitle={postData.title}>
       <div className={styles.post}>
